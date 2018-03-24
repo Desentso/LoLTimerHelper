@@ -1,0 +1,35 @@
+.App {
+}
+
+.side {
+  height: 100%;
+}
+
+.blue {
+  float: left;
+}
+
+.red {
+  float: right;
+}
+
+.Champion {
+  border: 1px solid #333;
+  margin-bottom: 20px;
+}
+
+.championIcon {
+  width: 125px;
+  height: 125px;
+}
+
+.summonerSpells {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.SummonerSpell {
+  border: 1px solid violet;
+  width: 60px;
+  height: 60px;
+}
