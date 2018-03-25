@@ -33,3 +33,19 @@
   width: 60px;
   height: 60px;
 }
+
+.timer {
+  background-color: rgba(0,0,0,0.4);
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: -20px;
+  text-align: center;
+}
+
+.timerText {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 60px;
+  color: white;
+}

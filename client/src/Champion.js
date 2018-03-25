@@ -16,8 +16,8 @@ class Champion extends Component {
         <img className="championIcon" src={this.props.data.championIcon} />
 
         <div className="summonerSpells" style={{float: summonerSpellsFloat}}>
-        	<SummonerSpell data={this.props.data.summonerSpells[0]} />
-        	<SummonerSpell data={this.props.data.summonerSpells[1]} />
+        	<SummonerSpell data={this.props.data.summonerSpells[0]} championName={this.props.data.name} />
+        	<SummonerSpell data={this.props.data.summonerSpells[1]} championName={this.props.data.name} />
         </div>
 
       </div>
