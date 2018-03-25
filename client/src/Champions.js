@@ -13,7 +13,7 @@ class Champions extends Component {
 
     return (
       <div className={"side " + this.props.side}>
-     	{champions}
+     	  {champions}
       </div>
     );
   }

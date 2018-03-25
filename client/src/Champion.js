@@ -13,7 +13,7 @@ class Champion extends Component {
     return (
       <div className="Champion">
 
-        <img className="championIcon" src={this.props.data.championIcon} />
+        <img className="championIcon" src={"http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/" + this.props.data.championIcon.full} />
 
         <div className="summonerSpells" style={{float: summonerSpellsFloat}}>
         	<SummonerSpell data={this.props.data.summonerSpells[0]} championName={this.props.data.name} />

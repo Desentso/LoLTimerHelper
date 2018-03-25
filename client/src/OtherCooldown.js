@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class SummonerSpell extends Component {
+class OtherCooldown extends Component {
 
 	constructor(props) {
 		super(props);
@@ -39,15 +39,15 @@ class SummonerSpell extends Component {
 				}
 
 				if (minutes === 1 && seconds === 2){
-					const msg = new SpeechSynthesisUtterance(this.props.championName + "'s " + this.props.data.name + " is up in 1 minute.");
+					const msg = new SpeechSynthesisUtterance(this.props.type + " is up in 1 minute.");
 					msg.rate = 1.5;
 					window.speechSynthesis.speak(msg);
 				} else if (minutes === 0 && seconds === 17) {
-					const msg = new SpeechSynthesisUtterance(this.props.championName + "'s " + this.props.data.name + " is up in 15 seconds.");
+					const msg = new SpeechSynthesisUtterance(this.props.type + " is up in 15 seconds.");
 					msg.rate = 1.5;
 					window.speechSynthesis.speak(msg);
 				} else if (minutes === 0 && seconds === 2) {
-					const msg = new SpeechSynthesisUtterance(this.props.championName + "'s " + this.props.data.name + " is up.");
+					const msg = new SpeechSynthesisUtterance(this.props.type + " is up.");
 					msg.rate = 1.5;
 					window.speechSynthesis.speak(msg);
 				}
@@ -70,8 +70,8 @@ class SummonerSpell extends Component {
   	}
 
     return (
-      <div className="SummonerSpell" onClick={this.setTimer}>
-      	<img className="spellIcon" src={"http://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/" + this.props.data.icon.full} />
+      <div className="OtherCooldown" onClick={this.setTimer}>
+      	<img className="spellIcon" src={"http://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/" + this.props.icon} />
       	<div className="timer" style={{display: displayTimer}}>
       		<span className="timerText">{timerString}</span>
       	</div>
@@ -80,4 +80,4 @@ class SummonerSpell extends Component {
   }
 }
 
-export default SummonerSpell;
+export default OtherCooldown;

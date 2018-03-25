@@ -1,4 +1,10 @@
+#root {
+  height: 100%;
+}
+
 .App {
+  background-color: #191919;
+  height: 100%;
 }
 
 .side {
@@ -14,38 +20,60 @@
 }
 
 .Champion {
-  border: 1px solid #333;
-  margin-bottom: 20px;
+  bor der: 1px solid #333;
+  margin-bottom: 30px;
+  height: 130px;
+  box-shadow: 0 0 15px 1px lightgreen;
+  padding: 10px;
+  border-radius:  0 3px 3px 0;
+}
+
+.red > .Champion {
+  border-radius:  3px 0 0 3px;
 }
 
 .championIcon {
-  width: 125px;
-  height: 125px;
+  width: 130px;
+  height: 130px;
 }
 
 .summonerSpells {
   display: inline-block;
   vertical-align: top;
+  margin-left: 7px;
+}
+
+.red > .Champion > .summonerSpells {
+  margin-right: 7px;
+  margin-left: 0;
 }
 
 .SummonerSpell {
-  border: 1px solid violet;
-  width: 60px;
-  height: 60px;
+  b order: 3px solid lightgreen;
+  border-radius: 3px;
+  width: 61px;
+  height: 61px;
+  margin-bottom: 7px;
+}
+
+.spellIcon {
+  height: 100%;
 }
 
 .timer {
-  background-color: rgba(0,0,0,0.4);
-  width: 100%;
-  height: 100%;
+  background-color: rgba(0,0,0,0.55);
+  width: 64px;
+  height: 64px;
   position: relative;
-  top: -20px;
+  top: -68px;
   text-align: center;
 }
 
 .timerText {
   display: inline-block;
   vertical-align: middle;
-  line-height: 60px;
+  line-height: 66px;
   color: white;
+  font-weight: bold;
+  font-size: 18px;
 }
