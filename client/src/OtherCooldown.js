@@ -17,8 +17,8 @@ class OtherCooldown extends Component {
 
 		} else {
 
-			let minutes = Math.floor(this.props.data.cooldown / 60);
-			let seconds = Math.floor(((this.props.data.cooldown / 60) - minutes) * 60);
+			let minutes = Math.floor(this.props.cooldown / 60);
+			let seconds = Math.floor(((this.props.cooldown / 60) - minutes) * 60);
 
 			this.setState({minutes: minutes, seconds: seconds});
 
@@ -58,6 +58,23 @@ class OtherCooldown extends Component {
 
 	}
 
+	cancelTimer = () => {
+
+		clearInterval(this.state.timerInterval);
+		this.setState({timerInterval: null})
+	}
+
+	handleClick = e => {
+		e.preventDefault();
+		console.log(e.nativeEvent);
+		if (e.nativeEvent.which === 1) {
+			this.setTimer();
+		} else if (e.nativeEvent.which === 3) {
+			e.preventDefault();
+			this.cancelTimer();
+		}
+	}
+
   render() {
 
   	let displayTimer = "none";
@@ -70,8 +87,8 @@ class OtherCooldown extends Component {
   	}
 
     return (
-      <div className="OtherCooldown" onClick={this.setTimer}>
-      	<img className="spellIcon" src={"http://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/" + this.props.icon} />
+      <div className="OtherCooldown" onMouseDown={this.handleClick} onContextMenu={(e) => e.preventDefault()} id={this.props.id}>
+      	<img className="spellIcon" src={this.props.icon} />
       	<div className="timer" style={{display: displayTimer}}>
       		<span className="timerText">{timerString}</span>
       	</div>

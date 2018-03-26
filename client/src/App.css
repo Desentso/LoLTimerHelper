@@ -77,3 +77,98 @@
   font-weight: bold;
   font-size: 18px;
 }
+
+.mapArea {
+  display: inline-block;
+  width: calc(100% - 436px);
+}
+
+.OtherCooldown {
+  width: 80px;
+  height: 80px;
+
+
+  padding: 10px;
+  border-radius: 3px;
+  border: 2px solid lightgreen;
+  box-shadow: 0 0 10px 1px lightgreen;
+  background-color: #191919;
+}
+
+.OtherCooldown > .timer {
+  height: 80px;
+  width: 80px;
+  top: -84px;
+}
+
+.OtherCooldown > .timer > .timerText {
+  line-height: 80px;
+}
+
+/*
+#baron {
+  float: left;
+  margin-left: 30%;
+}
+
+#dragon {
+  float: right;
+  margin-right: 30%;
+}
+
+#redRed, #redBlue {
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+#blueRed, #blueBlue {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}*/
+
+
+
+#baron {
+  position: relative;
+  left: 39%;
+  top: 240px;
+}
+
+#dragon {
+  position: relative;
+  left: 60.5%;
+  top: 460px;
+}
+
+#redRed {
+  position: relative;
+  left: 48%;
+} 
+
+#redBlue {
+  position: relative;
+  left: 65%;
+  top: 120px;
+}
+
+#blueRed {
+  position: relative;
+  left: 51%;
+  top: 170px;
+} 
+
+#blueBlue {
+  position: relative;
+  left: 33%;
+  top: -150px;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 920px;
+  margin: auto
+}

@@ -72,19 +72,22 @@ class App extends Component {
 
         <Champions side="blue" champions={blueChampions} />
 
-        <div>
-          <OtherCooldown type="baron" cooldown={420} icon="#" />
-          <OtherCooldown type="dragon" cooldown={360} icon="#" />
-        </div>
+        <div className="mapArea">
 
-        <div>
-          <OtherCooldown type="red Side Red" cooldown={300} icon="#" />
-          <OtherCooldown type="red Side Blue" cooldown={300} icon="#" />
-        </div>
+          <img src="/images/lolmap.png" id="map" />
 
-        <div>
-          <OtherCooldown type="blue Side Blue" cooldown={300} icon="#" />
-          <OtherCooldown type="blue Side Red" cooldown={300} icon="#" />
+          <div>
+
+              <OtherCooldown type="baron" id="baron" cooldown={420} icon="http://img1.wikia.nocookie.net/__cb20140620025404/leagueoflegends/images/3/38/Baron_NashorSquare.png" />
+              <OtherCooldown type="dragon" id="dragon" cooldown={360} icon="http://img1.wikia.nocookie.net/__cb20140620025407/leagueoflegends/images/c/c9/DragonSquare.png" />
+
+              <OtherCooldown type="red side Red" id="redRed" cooldown={300} icon="http://img2.wikia.nocookie.net/__cb20140620025406/leagueoflegends/images/e/e7/Red_BramblebackSquare.png" />
+              <OtherCooldown type="red side Blue" id="redBlue" cooldown={300} icon="http://img3.wikia.nocookie.net/__cb20140620025405/leagueoflegends/images/8/85/Blue_SentinelSquare.png" />
+
+              <OtherCooldown type="blue side Red" id="blueRed" cooldown={300} icon="http://img2.wikia.nocookie.net/__cb20140620025406/leagueoflegends/images/e/e7/Red_BramblebackSquare.png" />
+              <OtherCooldown type="blue side Blue" id="blueBlue" cooldown={300} icon="http://img3.wikia.nocookie.net/__cb20140620025405/leagueoflegends/images/8/85/Blue_SentinelSquare.png" />
+
+          </div>
         </div>
 
         <Champions side="red" champions={redChampions} />
@@ -94,3 +97,20 @@ class App extends Component {
 }
 
 export default App;
+/*
+<div style={{height: "300px"}}>
+              <OtherCooldown type="baron" id="baron" cooldown={420} icon="http://img1.wikia.nocookie.net/__cb20140620025404/leagueoflegends/images/3/38/Baron_NashorSquare.png" />
+              <OtherCooldown type="dragon" id="dragon" cooldown={360} icon="http://img1.wikia.nocookie.net/__cb20140620025407/leagueoflegends/images/c/c9/DragonSquare.png" />
+            </div>
+
+            <div style={{float: "right"}}>
+              <OtherCooldown type="red Side Red" id="redRed" cooldown={300} icon="http://img2.wikia.nocookie.net/__cb20140620025406/leagueoflegends/images/e/e7/Red_BramblebackSquare.png" />
+              <OtherCooldown type="red Side Blue" id="redBlue" cooldown={300} icon="http://img3.wikia.nocookie.net/__cb20140620025405/leagueoflegends/images/8/85/Blue_SentinelSquare.png" />
+            </div>
+
+            <div>
+              <OtherCooldown type="blue Side Red" id="blueRed" cooldown={300} icon="http://img2.wikia.nocookie.net/__cb20140620025406/leagueoflegends/images/e/e7/Red_BramblebackSquare.png" />
+              <OtherCooldown type="blue Side Blue" id="blueBlue" cooldown={300} icon="http://img3.wikia.nocookie.net/__cb20140620025405/leagueoflegends/images/8/85/Blue_SentinelSquare.png" />
+            </div>
+
+            */

@@ -106,7 +106,8 @@ function sleep(ms) {
 }
 
 async function getChampData(resp) {
-	for (let i = 60; i < 80; i++){
+
+	for (let i = 108; i < 125; i++){
 		axios.get("https://euw1.api.riotgames.com/lol/static-data/v3/champions/" + i + "?locale=en_US&champData=all&api_key=" + process.env.RIOT_GAMES_API_KEY)
 		.then(response => {
 			const data = response.data;

@@ -58,6 +58,23 @@ class SummonerSpell extends Component {
 
 	}
 
+	cancelTimer = () => {
+
+		clearInterval(this.state.timerInterval);
+		this.setState({timerInterval: null})
+	}
+
+	handleClick = e => {
+		e.preventDefault();
+		console.log(e.nativeEvent);
+		if (e.nativeEvent.which === 1) {
+			this.setTimer();
+		} else if (e.nativeEvent.which === 3) {
+			e.preventDefault();
+			this.cancelTimer();
+		}
+	}
+
   render() {
 
   	let displayTimer = "none";
@@ -70,7 +87,7 @@ class SummonerSpell extends Component {
   	}
 
     return (
-      <div className="SummonerSpell" onClick={this.setTimer}>
+      <div className="SummonerSpell" onMouseDown={this.handleClick} onContextMenu={(e) => e.preventDefault()}>
       	<img className="spellIcon" src={"http://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/" + this.props.data.icon.full} />
       	<div className="timer" style={{display: displayTimer}}>
       		<span className="timerText">{timerString}</span>
