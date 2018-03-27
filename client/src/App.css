@@ -130,6 +130,7 @@
   padding: 10px 30px;
   background-color: #191919;
   box-shadow: 0 0 5px 1px #32868c;
+  z-index: 1000;
 }
 
 .sectionTitle {

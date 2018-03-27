@@ -12,7 +12,7 @@ app.listen(app.get('port'), () => {
   console.log("Node app is running at localhost:" + app.get('port'))
 });
 
-app.use(express.static("/client/public"));
+app.use(express.static("build"));
 app.use(bodyParser.json());
 
 require('dotenv').load();
@@ -30,7 +30,7 @@ MongoClient.connect(process.env.DATABASE_CONNECTION_STRING, (err, client) => {
 app.get("/", (req, resp) => {
 
 	//resp.send("abc");
-	resp.sendFile(path.join(__dirname + "/client/public/index.html"));
+	resp.sendFile(path.join(__dirname + "/index.html"));
 });
 
 app.get("/getMatchData", (req, resp) => {

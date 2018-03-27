@@ -33,7 +33,9 @@ class TopBar extends Component {
     e.target.blur();  
 
     if (this.state.summonerName) {
+
       window.history.pushState({}, "", "/?summonername="+ this.state.summonerName)
+      
       fetch("/getMatchData?summonerName=" + this.state.summonerName)
       .then(resp => {
         if (resp.status === 200){
