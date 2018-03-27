@@ -3,9 +3,78 @@
 }
 
 .App {
-  background-color: #191919;
+  background-color: #021316;/*#191919;*/
   height: 100%;
 }
+
+
+
+
+.TopBar {
+  color: #ddd;
+  height: 45px;
+  padding-top: 5px;
+  padding: 5px 50px 0 50px;
+  width: calc(100% - 100px);
+  background-color: #191919;
+  box-shadow: 0 2px 5px 0 #32868c;
+  margin-bottom: 20px;
+}
+
+.inputArea {
+  display: inline-block;
+}
+
+.input {
+  border-radius: 3px;
+  padding: 5px;
+  border: 1px solid #32868c;
+  background-color: #153845;
+  color: inherit;
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 5px 1px #32868c;
+}
+
+.submit {
+  border: none;
+  background-color: #32868c;
+  /*border-bottom: 2px solid #00466b;*/
+  color: white;
+  padding: 8px;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.submit:focus {
+  outline: none;
+  background-color: #153845;
+}
+
+.submit:hover {
+  box-shadow: 0 0 5px 1px #32868c;
+}
+
+.title {
+  display: inline-block;
+  margin: 0;
+  text-align: center;
+  width: calc(100% - 810px);
+  margin: auto;
+  vertical-align: middle;
+}
+
+.settingsArea {
+  display: inline-block;
+  float: right;
+}
+
+
+
 
 .side {
   height: 100%;
@@ -21,15 +90,16 @@
 
 .Champion {
   bor der: 1px solid #333;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   height: 130px;
-  box-shadow: 0 0 15px 1px lightgreen;
+  box-shadow: 0 0 15px 2px #339ddf;
   padding: 10px;
   border-radius:  0 3px 3px 0;
 }
 
 .red > .Champion {
   border-radius:  3px 0 0 3px;
+  box-shadow: 0 0 15px 2px #dd0d03;
 }
 
 .championIcon {
@@ -76,6 +146,7 @@
   color: white;
   font-weight: bold;
   font-size: 18px;
+  cursor: default;
 }
 
 .mapArea {
@@ -90,9 +161,10 @@
 
   padding: 10px;
   border-radius: 3px;
-  border: 2px solid lightgreen;
-  box-shadow: 0 0 10px 1px lightgreen;
-  background-color: #191919;
+  border: 2px solid #32868c;
+  box-shadow: 0 0 10px 1px #32868c;
+  background-color: #021316;/*#191919;*/
+  cursor: normal;
 }
 
 .OtherCooldown > .timer {
@@ -165,10 +237,10 @@
 
 #map {
   position: absolute;
-  top: 0;
+  top: 27px;
   left: 0;
   right: 0;
   bottom: 0;
-  max-height: 920px;
+  max-height: 840px;
   margin: auto
 }

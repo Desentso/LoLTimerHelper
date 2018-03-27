@@ -83,7 +83,10 @@ app.get("/getMatchData", (req, resp) => {
 				resp.send(JSON.stringify({blueSide: blueSide, redSide: redSide}));
 			})
 		})
-		.catch(err => console.log(err));
+		.catch(err => {
+			console.log(err); 
+			resp.sendStatus(404)
+		});
 	})
 	.catch(err => {
 		console.log(err);
@@ -107,7 +110,7 @@ function sleep(ms) {
 
 async function getChampData(resp) {
 
-	for (let i = 108; i < 125; i++){
+	/*for (let i = 132; i < 145; i++){
 		axios.get("https://euw1.api.riotgames.com/lol/static-data/v3/champions/" + i + "?locale=en_US&champData=all&api_key=" + process.env.RIOT_GAMES_API_KEY)
 		.then(response => {
 			const data = response.data;
@@ -128,12 +131,36 @@ async function getChampData(resp) {
 		})
 
 		await sleep(1000);
-	}
+	}*/
+
+	axios.get("http://ddragon.leagueoflegends.com/cdn/8.6.1/data/en_US/champion.json")
+	.then(response => {
+		const data = response.data;
+		Object.keys(data.data).forEach(key => {
+			if (parseInt(data.data[key].key) > 1) {
+
+				const champion = {
+					_id: parseInt(data.data[key].key),
+					name: data.data[key].name,
+					image: data.data[key].image,
+					stats: data.data[key].stats
+				}
+
+				db.collection("champions").insertOne(champion, (err, res) => {
+					if (err) return console.log(err)
+
+				    console.log('saved to database')
+				    //resp.send("done");
+				})
+			}
+		});
+	});
+
 	resp.send("done");
 }
 
 async function getSpellData(resp) {
-	return;
+	/*return;
 	for (let i = 15; i < 25; i++){
 		axios.get("https://euw1.api.riotgames.com/lol/static-data/v3/summoner-spells/" + i + "?locale=en_US&spellData=all&api_key=" + process.env.RIOT_GAMES_API_KEY)
 		.then(response => {
@@ -155,6 +182,30 @@ async function getSpellData(resp) {
 		})
 
 		await sleep(1000);
-	}
+	}*/
+	axios.get("http://ddragon.leagueoflegends.com/cdn/8.4.1/data/en_US/summoner.json")
+	.then(response => {
+		const data = response.data;
+		Object.keys(data.data).forEach(key => {
+			if (parseInt(data.data[key].key) > 21) {
+
+				const spell = {
+					_id: data.data[key].key,
+					name: data.data[key].name,
+					image: data.data[key].image,
+					cooldown: data.data[key].cooldown[0]
+				}
+
+				db.collection("summonerSpells").insertOne(spell, (err, res) => {
+					if (err) return console.log(err)
+
+				    console.log('saved to database')
+				    //resp.send("done");
+				})
+			}
+		});
+	});
+
+	resp.send("done");
 	resp.send("done");
 }

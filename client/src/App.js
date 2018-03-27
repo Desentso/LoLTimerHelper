@@ -3,6 +3,7 @@ import './App.css';
 
 import Champions from "./Champions.js";
 import OtherCooldown from "./OtherCooldown.js";
+import TopBar from "./TopBar.js";
 
 class App extends Component {
 
@@ -17,30 +18,8 @@ class App extends Component {
     }
   }
 
-  componentWillMount() {
-    //this.getData();
-  }
-
-  summonerNameOnChange = e => this.setState({summonerName: e.target.value})
-
-  getData = () => {
-    
-    if (this.state.summonerName) {
-      fetch("/getMatchData?summonerName=" + this.state.summonerName)
-      .then(resp => {
-        if (resp.status === 200){
-          return resp.json();
-        } else if (resp.status === 404) {
-          this.setState({error: "Summoner Name Not Found"});
-        }
-      })
-      .then(data => {
-
-        console.log(data);
-        this.setState({blueChampions: data.blueSide, redChampions: data.redSide});
-      })
-      .catch(err => console.log(err));
-    }
+  setData = (blueChampions, redChampions) => {
+    this.setState({blueChampions: blueChampions, redChampions: redChampions});
   }
 
   render() {
@@ -64,11 +43,7 @@ class App extends Component {
     return (
       <div className="App">
 
-        <div>
-          <label>Summoner Name: </label>
-          <input type="text" onChange={this.summonerNameOnChange}/>
-          <button onClick={this.getData}>Get Data</button>
-        </div>
+        <TopBar afterData={this.setData} />
 
         <Champions side="blue" champions={blueChampions} />
 
