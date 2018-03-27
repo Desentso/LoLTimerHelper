@@ -13,6 +13,7 @@ app.listen(app.get('port'), () => {
 });
 
 app.use(express.static("build"));
+//app.use(express.static(path.join(process.env.PWD, 'build')));
 app.use(bodyParser.json());
 
 require('dotenv').load();
@@ -30,7 +31,8 @@ MongoClient.connect(process.env.DATABASE_CONNECTION_STRING, (err, client) => {
 app.get("/", (req, resp) => {
 
 	//resp.send("abc");
-	resp.sendFile(path.join(__dirname + "/index.html"));
+	//resp.sendFile(path.join(__dirname + "/index.html"));
+	resp.sendFile("/index.html");
 });
 
 app.get("/getMatchData", (req, resp) => {
