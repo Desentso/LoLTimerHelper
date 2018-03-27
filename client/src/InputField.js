@@ -12,7 +12,7 @@ class InputField extends Component {
     if (this.props.error){
 
       className = className + " error";
-      displayError = "block";
+      displayError = "inline-block";
     }
 
     return (

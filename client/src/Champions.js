@@ -8,7 +8,7 @@ class Champions extends Component {
   	let champions = [];
 
   	for (let i = 0; i < this.props.champions.length; i++) {
-  		champions.push(<Champion data={this.props.champions[i]} side={this.props.side} />);
+  		champions.push(<Champion data={this.props.champions[i]} side={this.props.side} volume={this.props.volume} />);
   	}
 
     return (

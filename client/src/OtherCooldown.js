@@ -41,14 +41,17 @@ class OtherCooldown extends Component {
 				if (minutes === 1 && seconds === 2){
 					const msg = new SpeechSynthesisUtterance(this.props.type + " is up in 1 minute.");
 					msg.rate = 1.5;
+					msg.volume = this.props.volume;
 					window.speechSynthesis.speak(msg);
 				} else if (minutes === 0 && seconds === 17) {
 					const msg = new SpeechSynthesisUtterance(this.props.type + " is up in 15 seconds.");
 					msg.rate = 1.5;
+					msg.volume = this.props.volume;
 					window.speechSynthesis.speak(msg);
 				} else if (minutes === 0 && seconds === 2) {
 					const msg = new SpeechSynthesisUtterance(this.props.type + " is up.");
 					msg.rate = 1.5;
+					msg.volume = this.props.volume;
 					window.speechSynthesis.speak(msg);
 				}
 			}, 1000);

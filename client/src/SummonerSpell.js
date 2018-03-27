@@ -41,14 +41,17 @@ class SummonerSpell extends Component {
 				if (minutes === 1 && seconds === 2){
 					const msg = new SpeechSynthesisUtterance(this.props.championName + "'s " + this.props.data.name + " is up in 1 minute.");
 					msg.rate = 1.5;
+					msg.volume = this.props.volume;
 					window.speechSynthesis.speak(msg);
 				} else if (minutes === 0 && seconds === 17) {
 					const msg = new SpeechSynthesisUtterance(this.props.championName + "'s " + this.props.data.name + " is up in 15 seconds.");
 					msg.rate = 1.5;
+					msg.volume = this.props.volume;
 					window.speechSynthesis.speak(msg);
 				} else if (minutes === 0 && seconds === 2) {
 					const msg = new SpeechSynthesisUtterance(this.props.championName + "'s " + this.props.data.name + " is up.");
 					msg.rate = 1.5;
+					msg.volume = this.props.volume;
 					window.speechSynthesis.speak(msg);
 				}
 			}, 1000);
@@ -88,7 +91,7 @@ class SummonerSpell extends Component {
 
     return (
       <div className="SummonerSpell" onMouseDown={this.handleClick} onContextMenu={(e) => e.preventDefault()}>
-      	<img className="spellIcon" src={"http://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/" + this.props.data.icon.full} />
+      	<img className="spellIcon" src={"http://ddragon.leagueoflegends.com/cdn/8.6.1/img/spell/" + this.props.data.icon.full} />
       	<div className="timer" style={{display: displayTimer}}>
       		<span className="timerText">{timerString}</span>
       	</div>

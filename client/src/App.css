@@ -4,7 +4,7 @@
 
 .App {
   background-color: #021316;/*#191919;*/
-  height: 100%;
+  min-height: 100%;
 }
 
 
@@ -16,7 +16,7 @@
   padding-top: 5px;
   padding: 5px 50px 0 50px;
   width: calc(100% - 100px);
-  background-color: #191919;
+  background-color: #153845;/*#191919;*/
   box-shadow: 0 2px 5px 0 #32868c;
   margin-bottom: 20px;
 }
@@ -36,6 +36,49 @@
 .input:focus {
   outline: none;
   box-shadow: 0 0 5px 1px #32868c;
+}
+
+.error {
+  border: 1px solid red;
+}
+
+.inputErrorText {
+  color: red;
+  margin-left: 5px;
+}
+
+.rangeInput {
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-apperance: none;
+  border-radius: 0px;
+  background-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        color-stop(0.5, #32868c),
+        color-stop(0.5, #ddd)
+    );
+}
+
+.rangeInput::-webkit-slider-runnable-track {
+  -webkit-appearance: none !important;
+    width: 300px;
+    height: 5px;
+}
+
+.rangeInput::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  border: none;
+  background-color: #32868c;
+  height: 16px;
+  width: 16px;
+  border-radius: 10px;
+  margin-top: -5px;
+}
+
+.rangeInput:focus {
+    outline: none;
 }
 
 .submit {
@@ -66,12 +109,44 @@
   width: calc(100% - 810px);
   margin: auto;
   vertical-align: middle;
+  color: #9e7d34;
 }
 
 .settingsArea {
   display: inline-block;
   float: right;
 }
+
+.infoImg {
+  height: 35px;
+  margin-top: 2.5px;
+  margin-left: 10px; 
+}
+
+.infoArea {
+  position: fixed;
+  right: 50px;
+  width: 300px;
+  padding: 10px 30px;
+  background-color: #191919;
+  box-shadow: 0 0 5px 1px #32868c;
+}
+
+.sectionTitle {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1180px){
+  .TopBar {
+    padding: 5px 10px 0 10px;
+    width: calc(100% - 20px);
+  }
+
+  .title {
+    width: unset;
+  }
+}
+
 
 
 
@@ -202,37 +277,47 @@
 
 #baron {
   position: relative;
-  left: 39%;
-  top: 240px;
+  left: 37%;
+  top: 210px;
 }
 
 #dragon {
   position: relative;
-  left: 60.5%;
+  left: 62%;
   top: 460px;
 }
 
 #redRed {
   position: relative;
-  left: 48%;
+  left: 47%;
+  top: -20px;
 } 
 
 #redBlue {
   position: relative;
-  left: 65%;
+  left: 67%;
   top: 120px;
 }
 
 #blueRed {
   position: relative;
-  left: 51%;
+  left: 53%;
   top: 170px;
 } 
 
 #blueBlue {
   position: relative;
-  left: 33%;
-  top: -150px;
+  left: 31%;
+  top: -160px;
+}
+
+.mapArea {
+  max-width: calc(100% - 420px);
+  height: 840px;
+  background-image: url(/images/lolmap.png);
+  background-size: auto;
+  background-repeat:no-repeat;
+  background-position: center center;
 }
 
 #map {
@@ -242,5 +327,6 @@
   right: 0;
   bottom: 0;
   max-height: 840px;
+  max-width: 100%;
   margin: auto
 }
