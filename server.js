@@ -31,8 +31,7 @@ MongoClient.connect(process.env.DATABASE_CONNECTION_STRING, (err, client) => {
 app.get("/", (req, resp) => {
 
 	//resp.send("abc");
-	//resp.sendFile(path.join(__dirname + "/index.html"));
-	resp.sendFile("/index.html");
+	resp.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 app.get("/getMatchData", (req, resp) => {

@@ -1,4 +1,4 @@
-## LoL Timer Helper
+# LoL Timer Helper
 
   LoL Timer Helper is a web app - for the game called League of Legends - that helps you track summoner spell cooldowns, jungle buffs and dragon/baron spawn times.
 
