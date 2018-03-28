@@ -91,7 +91,7 @@ class SummonerSpell extends Component {
 
     return (
       <div className="SummonerSpell" onMouseDown={this.handleClick} onContextMenu={(e) => e.preventDefault()}>
-      	<img className="spellIcon" src={"http://ddragon.leagueoflegends.com/cdn/8.6.1/img/spell/" + this.props.data.icon.full} />
+      	<img className="spellIcon" src={"https://ddragon.leagueoflegends.com/cdn/8.6.1/img/spell/" + this.props.data.icon.full} />
       	<div className="timer" style={{display: displayTimer}}>
       		<span className="timerText">{timerString}</span>
       	</div>

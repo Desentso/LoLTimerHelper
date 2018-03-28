@@ -88,14 +88,14 @@ class App extends Component {
         <div className="mapArea">
 
           <div>
-            <OtherCooldown type="baron" id="baron" cooldown={420} volume={this.state.volume} icon="http://img1.wikia.nocookie.net/__cb20140620025404/leagueoflegends/images/3/38/Baron_NashorSquare.png" />
-            <OtherCooldown type="dragon" id="dragon" cooldown={360} volume={this.state.volume} icon="http://img1.wikia.nocookie.net/__cb20140620025407/leagueoflegends/images/c/c9/DragonSquare.png" />
+            <OtherCooldown type="baron" id="baron" cooldown={420} volume={this.state.volume} icon="https://img1.wikia.nocookie.net/__cb20140620025404/leagueoflegends/images/3/38/Baron_NashorSquare.png" />
+            <OtherCooldown type="dragon" id="dragon" cooldown={360} volume={this.state.volume} icon="https://img1.wikia.nocookie.net/__cb20140620025407/leagueoflegends/images/c/c9/DragonSquare.png" />
 
-            <OtherCooldown type="red side Red" id="redRed" cooldown={300} volume={this.state.volume} icon="http://img2.wikia.nocookie.net/__cb20140620025406/leagueoflegends/images/e/e7/Red_BramblebackSquare.png" />
-            <OtherCooldown type="red side Blue" id="redBlue" cooldown={300} volume={this.state.volume} icon="http://img3.wikia.nocookie.net/__cb20140620025405/leagueoflegends/images/8/85/Blue_SentinelSquare.png" />
+            <OtherCooldown type="red side Red" id="redRed" cooldown={300} volume={this.state.volume} icon="https://img2.wikia.nocookie.net/__cb20140620025406/leagueoflegends/images/e/e7/Red_BramblebackSquare.png" />
+            <OtherCooldown type="red side Blue" id="redBlue" cooldown={300} volume={this.state.volume} icon="https://img3.wikia.nocookie.net/__cb20140620025405/leagueoflegends/images/8/85/Blue_SentinelSquare.png" />
 
-            <OtherCooldown type="blue side Red" id="blueRed" cooldown={300} volume={this.state.volume} icon="http://img2.wikia.nocookie.net/__cb20140620025406/leagueoflegends/images/e/e7/Red_BramblebackSquare.png" />
-            <OtherCooldown type="blue side Blue" id="blueBlue" cooldown={300} volume={this.state.volume} icon="http://img3.wikia.nocookie.net/__cb20140620025405/leagueoflegends/images/8/85/Blue_SentinelSquare.png" />
+            <OtherCooldown type="blue side Red" id="blueRed" cooldown={300} volume={this.state.volume} icon="https://img2.wikia.nocookie.net/__cb20140620025406/leagueoflegends/images/e/e7/Red_BramblebackSquare.png" />
+            <OtherCooldown type="blue side Blue" id="blueBlue" cooldown={300} volume={this.state.volume} icon="https://img3.wikia.nocookie.net/__cb20140620025405/leagueoflegends/images/8/85/Blue_SentinelSquare.png" />
           </div>
         </div>
 

@@ -30,7 +30,6 @@ MongoClient.connect(process.env.DATABASE_CONNECTION_STRING, (err, client) => {
 
 app.get("/", (req, resp) => {
 
-	//resp.send("abc");
 	resp.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
@@ -94,7 +93,6 @@ app.get("/getMatchData", (req, resp) => {
 		resp.sendStatus(404);
 	})
 
-	//resp.send(JSON.stringify());
 });
 
 app.get("/getChampData", (req, resp) => {
@@ -111,7 +109,7 @@ function sleep(ms) {
 
 async function getChampData(resp) {
 
-	axios.get("http://ddragon.leagueoflegends.com/cdn/8.6.1/data/en_US/champion.json")
+	axios.get("https://ddragon.leagueoflegends.com/cdn/8.6.1/data/en_US/champion.json")
 	.then(response => {
 		const data = response.data;
 		Object.keys(data.data).forEach(key => {
@@ -139,7 +137,7 @@ async function getChampData(resp) {
 
 async function getSpellData(resp) {
 
-	axios.get("http://ddragon.leagueoflegends.com/cdn/8.6.1/data/en_US/summoner.json")
+	axios.get("https://ddragon.leagueoflegends.com/cdn/8.6.1/data/en_US/summoner.json")
 	.then(response => {
 		const data = response.data;
 		Object.keys(data.data).forEach(key => {
@@ -162,6 +160,5 @@ async function getSpellData(resp) {
 		});
 	});
 
-	resp.send("done");
 	resp.send("done");
 }
