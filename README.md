@@ -2,6 +2,8 @@
 
   LoL Timer Helper is a web app - for the game called League of Legends - that helps you track summoner spell cooldowns, jungle buffs and dragon/baron spawn times.
 
+  You can use it online here, https://lol-timer-helper.herokuapp.com/
+
 ## How To Use
   
   First enter a summoner name on top right corner, to get data from your game. Note: You have to be in game to get the data.
@@ -9,6 +11,8 @@
 
 ## Installing & Running
   
+  https://lol-timer-helper.herokuapp.com/
+
   If you want to run it locally, you will need to have Node.js installed, a Riot Games API key and a Mongo Database.
   First create a .env file and add your API key and Mongo DB connection string
 
